@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500&display=swap');
+
+p,a,li{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'IBM Plex Serif', serif;
+}
+p,a,li{
+    font-size: 20px !important;
+    line-height: 1.5!important;
+}
+.logo-section{
+    max-width: 350px;
+}
+.logo-section h1 {
+    font-family: 'Sacramento', cursive;
+    font-size: 40px;
+    color: #EB5A2C;
+}
+.logo-section img{
+    display: block;
+    max-width: 150px;
+    margin: auto;
+}
+header{
+    box-shadow: 1px 3px 6px #cecece;
+    position: fixed;
+    top: 0;
+    width: 100%;    
+    background-color: #ffffff;
+    z-index: 1000;
+}
+header nav{    
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+}
+header nav ul li{
+    display: inline-block;
+    padding: 15px 20px 10px 10px;
+}
+header nav ul li a{
+    color: #EB5A2C;
+    font-size: 20px;
+    text-decoration: none;
+}
+header nav ul li:not(:last-child){
+    margin-right: 15px;
+
+}
+.container {
+    max-width: 1170px;
+    margin: auto;
+    position: relative;
+    padding: 0 15px;box-sizing: border-box;
+
+}
+.welcome-section, #tableSection{
+    background: #FFD5A1;
+    padding: 200px 0 80px;
+}
+
+.welcome-section h2{
+    text-align: center;
+}
+
+.welcome-section h2 span{
+    font-family: 'Sacramento', cursive;
+}
+.all-branches{
+    padding: 60px 0;
+    background-color: #FFB8A1;
+}
+.all-branches .branch-info{
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.bracnhes-title{
+    margin-bottom: 50px;
+}
+.branch-name{
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 35px;
+}
+.paris-branch .branch-name h3{
+    font-family: 'Parisienne', cursive;
+    color: #115279;
+}
+.seattle-branch .branch-name h3{
+    color: #236B96;
+    font-family: 'Pacifico', cursive;
+}
+.tokyo-branch .branch-name h3{
+    color: #EB5A2C;
+    font-family: 'Orbitron', sans-serif;
+}
+.dubai-branch .branch-name h3{
+    font-family: 'Staatliches', cursive;
+    color: #1FA561;
+}
+.lima-branch .branch-name h3{
+    font-family: 'Sofia', cursive;
+    color: #EB952C;
+}
+.bracnhes-title{
+    text-align: center;
+}
+.branch-data, .branch-map{
+    float: left;
+}
+
+.branch-card{
+    display: flex;
+    justify-content: space-between;
+}
+.branch-map{
+    width: 40%;
+}
+.branch-map iframe{
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+}
+.bracnh-flag{
+    display: flex;
+    width: 30%;
+}
+.bracnh-flag img{
+    border-radius: 20px;
+    display: block;
+    max-width: 200px;
+    margin: auto;
+}
+.branch-data h6{
+    font-weight: 500;
+    margin-bottom: 15px;
+    font-size: 25px;
+}
+.branch-contact{
+    margin-top: 20px;
+}
+.branch-data p, .branch-data li{
+    font-size: 16px;
+}
+.section-title h2{
+    border-bottom: 2px solid #000;
+    display: inline-block;
+    font-size: 40px;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+.section-title{
+    text-align: center;
+}
+
+.lima-branch h6, .lima-branch p, .lima-branch li{
+
+    color:#BE7010;
+}
+.dubai-branch h6, .dubai-branch p, .dubai-branch li{
+
+    color:#0B8648;
+}
+.paris-branch h6, .paris-branch p, .paris-branch li{
+    color: #115279;
+}
+.tokyo-branch h6, .tokyo-branch p, .tokyo-branch li{
+    color: #BE3A10;
+}
+.seattle-branch h6, .seattle-branch p, .seattle-branch li{
+    color: #236B96;
+}
+.welcome-section-text:nth-child(even) img{
+    float: left;
+    margin-right: 40px;
+}
+.welcome-section-text:nth-child(odd) img{
+    float: right;
+    margin-left: 40px;
+}
+.welcome-section-text{
+margin-bottom: 40px;
+}
+.welcome-section-text::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.welcome-section-text span{
+    font-family: 'Sacramento', cursive;
+}
+#tableSection{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#tableSection table {
+    border: 1px solid #3B7CA2;
+    margin: auto;
+}
+#tableSection th{
+    font-size: 22px;
+    text-align: center;
+    padding: 15px;
+    color: #115279;
+    font-weight: bold;
+}
+#tableSection tr{
+    border-bottom: 1px solid #115279;
+}
+#tableSection th,#tableSection td{
+    border-right: 1px solid #115279;
+}
+#tableSection tbody tr td:first-child, #tableSection tfoot tr td:first-child {
+    font-size: 22px;
+    padding: 15px;    
+    color: #115279;    
+    font-weight: bold;
+}
+
+#tableSection tbody tr td:not(:first-child), #tableSection tfoot td {
+    text-align: center;        
+    padding: 15px;
+    font-size: 20px;
+    color: #3B7CA2;
+}
