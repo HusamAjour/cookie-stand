@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/reset.css">
 </head>
+
 <body id="body">
     <header>
         <nav>
@@ -25,11 +27,43 @@
             </ul>
         </nav>
     </header>
-      <main>
-        <section id="tableSection"></section>   
-     </main>
-    <footer></footer>
+    <main>
+        <section id="tableSection"></section>
+        <section class="form-section">
+            <div class="container">
+            <form id="addBranchForm">
+                <fieldset>
+                    <legend>Add Branch Form</legend>
+                    <div class="form-input-groups">
+                        <div class="input-group">
+                            <label for="branchName">Branch Name</label>
+                            <input type="text" id="branchName" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="minimumCustomers">Min / Customers </label>
+                            <input type="number" id="minimumCustomers" required min="1">
+                        </div>
+                        <div class="input-group">
+                            <label for="maximumCustomers">Max / Customers</label>
+                            <input type="number" id="maximumCustomers" required min="1"> 
+                        </div>
+                        <div class="input-group">
+                            <label for="avgSaleCust">Avg. Cookie / Sale</label>
+                            <input type="number" id="avgSaleCust" required min="1s">
+                        </div>
+                        <div class="input-group submit-btn">
+                            <input type="submit">
+                        </div>
+                    </div>
+                </fieldset>
+            </form></div>
+        </section>
+    </main>
+    <footer>
+        <p>The Cookie Stand. All right reserved.</p>
+    </footer>
 
     <script src="js/app.js"></script>
 </body>
+
 </html>
