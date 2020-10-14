@@ -141,6 +141,7 @@ function renderTableFoot(branchesArray) {
 function buildTable(branchesArray) {
   var section1 = document.getElementById('tableSection');
   var table1 = document.createElement('table');
+  section1.innerHTML = '';
   section1.appendChild(table1);
   table1.appendChild(renderTableHead());
   table1.appendChild(renderTablebody(branchesArray));
@@ -148,3 +149,19 @@ function buildTable(branchesArray) {
 }
 
 buildTable(branches);
+
+
+var branchForm = document.getElementById('addBranchForm');
+
+branchForm.addEventListener('submit', function(event){
+  event.preventDefault();
+  var newBranch = new Branch();
+  newBranch.branchName = event.target.branchName.value;
+  newBranch.minCustomers = event.target.minimumCustomers.value;
+  newBranch.maxCustomers = event.target.maximumCustomers.value;
+  newBranch.avgSale = event.target.avgSaleCust.value;
+  newBranch.fillRandCustomers();
+  newBranch.fillCookiesPerSale();
+  buildTable(branches);
+  console.log(newBranch);
+});
