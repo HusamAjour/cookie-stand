@@ -153,15 +153,57 @@ buildTable(branches);
 
 var branchForm = document.getElementById('addBranchForm');
 
-branchForm.addEventListener('submit', function(event){
+branchForm.addEventListener('submit', function (event) {
   event.preventDefault();
-  var newBranch = new Branch();
-  newBranch.branchName = event.target.branchName.value;
-  newBranch.minCustomers = event.target.minimumCustomers.value;
-  newBranch.maxCustomers = event.target.maximumCustomers.value;
-  newBranch.avgSale = event.target.avgSaleCust.value;
-  newBranch.fillRandCustomers();
-  newBranch.fillCookiesPerSale();
-  buildTable(branches);
-  console.log(newBranch);
+  if (parseInt(event.target.maximumCustomers.value) < parseInt(event.target.minimumCustomers.value)) {
+    alert('To create a new branch, Max / Customers must be greater than Min / Customers. Please mofidy your input');
+  } else if (checkIfBranchExist(event.target.branchName.value) === true) {
+    var willUpdateBranch = confirm('This branch already exists. Do you want to update the existing branch?');
+    if (willUpdateBranch === true) {
+      var exitingbranchIndex = getBranchIndex(event.target.branchName.value);
+      branches[exitingbranchIndex].branchName = event.target.branchName.value;
+      branches[exitingbranchIndex].minCustomers = parseInt(event.target.minimumCustomers.value);
+      branches[exitingbranchIndex].maxCustomers = parseInt(event.target.maximumCustomers.value);
+      branches[exitingbranchIndex].avgSale = parseInt(event.target.avgSaleCust.value);
+      branches[exitingbranchIndex].totalCookies = 0;
+      branches[exitingbranchIndex].cookiesPerSale = [];
+      branches[exitingbranchIndex].randCustomers = [];
+      branches[exitingbranchIndex].fillRandCustomers();
+      branches[exitingbranchIndex].fillCookiesPerSale();
+      buildTable(branches);
+      console.log(branches[exitingbranchIndex]);
+
+    } else {
+      alert('Please insert a different branch name then.');
+    }
+  } else {
+    var newBranch = new Branch();
+    newBranch.branchName = event.target.branchName.value;
+    newBranch.minCustomers = parseInt(event.target.minimumCustomers.value);
+    newBranch.maxCustomers = parseInt(event.target.maximumCustomers.value);
+    newBranch.avgSale = parseInt(event.target.avgSaleCust.value);
+    newBranch.fillRandCustomers();
+    newBranch.fillCookiesPerSale();
+    buildTable(branches);
+    console.log(newBranch);
+  }
 });
+
+function checkIfBranchExist(newBranchName) {
+  for (var i = 0; i < branches.length; i++) {
+    if (newBranchName === branches[i].branchName) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function getBranchIndex(newBranchName) {
+  for (var i = 0; i < branches.length; i++) {
+    if (newBranchName === branches[i].branchName) {
+      return i;
+    }
+  }
+  return -1;
+}
+
