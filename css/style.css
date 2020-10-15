@@ -182,6 +182,10 @@ header nav ul li:not(:last-child){
 .seattle-branch h6, .seattle-branch p, .seattle-branch li{
     color: #236B96;
 }
+
+.welcome-section-text img{
+    max-height: 175px;
+}
 .welcome-section-text:nth-child(even) img{
     float: left;
     margin-right: 40px;
